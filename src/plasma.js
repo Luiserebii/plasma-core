@@ -1,12 +1,38 @@
 const services = require('./services/index')
 const debug = require('debug')
 
+<<<<<<< 2655095e337ac1a795fdd31775ded14bb03edc5f
 const defaultOptions = {
   dbProvider: services.DBProviders.DefaultDBProvider,
   operatorProvider: services.OperatorProviders.DefaultOperatorProvider,
   walletProvider: services.WalletProviders.DefaultWalletProvider,
   contractProvider: services.ContractProviders.DefaultContractProvider,
   web3Provider: services.Web3Provider
+=======
+const DefaultDBProvider = services.DBProviders.DefaultDBProvider
+const DefaultOperatorProvider =
+  services.OperatorProviders.DefaultOperatorProvider
+const DefaultWalletProvider = services.WalletProviders.DefaultWalletProvider
+const DefaultContractProvider =
+  services.ContractProviders.DefaultContractProvider
+const JSONRPCService = services.JSONRPCService
+const ChainService = services.ChainService
+const RangeManagerService = services.RangeManagerService
+const SyncService = services.SyncService
+const ProofService = services.ProofService
+const Web3Provider = services.Web3Provider
+const EventWatcherService = services.EventWatcherService
+// Should this perhaps belong somewhere in ./services/ as a proper js file, or perhaps being a minor variable, here should suffice?
+const defaultRegistryAddress = '0xA1f90e4933F9AF055e4a309DB54316552E7Fd10c'
+
+const defaultOptions = {
+  dbProvider: DefaultDBProvider,
+  operatorProvider: DefaultOperatorProvider,
+  walletProvider: DefaultWalletProvider,
+  contractProvider: DefaultContractProvider,
+  web3Provider: Web3Provider,
+  registryAddress: defaultRegistryAddress
+>>>>>>> Shifted defaultRegistryAddress into plasma.js defaultOptions. Moved out constants not related to outside sources, changed initContract to reflect these edits
 }
 
 /**
